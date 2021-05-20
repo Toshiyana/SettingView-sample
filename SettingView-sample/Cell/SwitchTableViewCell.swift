@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SettingTableViewCell: UITableViewCell {
+class SwitchTableViewCell: UITableViewCell {
 
-    static let identifier = "SettingTableViewCell"
+//    static let identifier = "SwitchTableViewCell"
     
     private let iconContainer: UIView = {
         let view = UIView()
@@ -22,7 +22,8 @@ class SettingTableViewCell: UITableViewCell {
     
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.tintColor = .white
+        //imageView.tintColor = .white
+        imageView.tintColor = .gray
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -33,13 +34,21 @@ class SettingTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let mySwitch: UISwitch = {
+        let mySwitch = UISwitch()
+        mySwitch.onTintColor = .systemBlue
+        return mySwitch
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         contentView.addSubview(iconContainer)
         iconContainer.addSubview(iconImageView)
         contentView.addSubview(label)
+        contentView.addSubview(mySwitch)
         contentView.clipsToBounds = true
-        accessoryType = .disclosureIndicator
+        //accessoryType = .disclosureIndicator
     }
     
     required init?(coder: NSCoder) {
@@ -59,6 +68,12 @@ class SettingTableViewCell: UITableViewCell {
                              y: 0,
                              width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
                              height: contentView.frame.size.height)
+        
+        mySwitch.sizeToFit()
+        mySwitch.frame = CGRect(x: contentView.frame.size.width - mySwitch.frame.size.width - 20,
+                                y: (contentView.frame.size.height - mySwitch.frame.size.height) / 2,
+                                width: mySwitch.frame.size.width,
+                                height: mySwitch.frame.size.height)
     }
     
     override func prepareForReuse() {
@@ -66,11 +81,14 @@ class SettingTableViewCell: UITableViewCell {
         iconContainer.backgroundColor = nil
         iconImageView.image = nil
         label.text = nil
+        mySwitch.isOn = false
     }
     
-    public func configure(with model: SettingOption) {
+    public func configure(with model: SettingSwitchOption) {
         iconContainer.backgroundColor = model.iconBackgroundColor
         iconImageView.image = model.icon
         label.text = model.title
+        mySwitch.isOn = model.isOn
     }
 }
+

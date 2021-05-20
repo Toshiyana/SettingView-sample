@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9940FF9E265635ED006D045E /* IconVersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9940FF9D265635ED006D045E /* IconVersionTableViewCell.swift */; };
+		9940FFA7265662D8006D045E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9940FFA6265662D8006D045E /* Constants.swift */; };
 		9956A553262219AC004F2757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A552262219AC004F2757 /* AppDelegate.swift */; };
 		9956A555262219AC004F2757 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A554262219AC004F2757 /* SceneDelegate.swift */; };
 		9956A557262219AC004F2757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A556262219AC004F2757 /* ViewController.swift */; };
@@ -17,9 +19,15 @@
 		9956A56C262220D5004F2757 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A56B262220D5004F2757 /* SettingTableViewCell.swift */; };
 		9956A57026223658004F2757 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A56F26223658004F2757 /* SwitchViewController.swift */; };
 		9956A57626230D39004F2757 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A57526230D39004F2757 /* SwitchTableViewCell.swift */; };
+		9956A673262B0779004F2757 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A672262B0778004F2757 /* ColorTableViewCell.swift */; };
+		9956A676262B3926004F2757 /* VersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A675262B3926004F2757 /* VersionTableViewCell.swift */; };
+		9956A679262BFBFA004F2757 /* ColorVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956A678262BFBFA004F2757 /* ColorVersionViewController.swift */; };
+		99D38CF22654251600956CA3 /* IconColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D38CF12654251600956CA3 /* IconColorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9940FF9D265635ED006D045E /* IconVersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconVersionTableViewCell.swift; sourceTree = "<group>"; };
+		9940FFA6265662D8006D045E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9956A54F262219AC004F2757 /* SettingView-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SettingView-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9956A552262219AC004F2757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9956A554262219AC004F2757 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +40,10 @@
 		9956A56B262220D5004F2757 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		9956A56F26223658004F2757 /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		9956A57526230D39004F2757 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		9956A672262B0778004F2757 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		9956A675262B3926004F2757 /* VersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTableViewCell.swift; sourceTree = "<group>"; };
+		9956A678262BFBFA004F2757 /* ColorVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorVersionViewController.swift; sourceTree = "<group>"; };
+		99D38CF12654251600956CA3 /* IconColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconColorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +78,14 @@
 			children = (
 				9956A573262236C6004F2757 /* Controller */,
 				9956A572262236A5004F2757 /* View */,
+				99D38CF42654253900956CA3 /* Cell */,
 				9956A552262219AC004F2757 /* AppDelegate.swift */,
 				9956A554262219AC004F2757 /* SceneDelegate.swift */,
 				9956A55E262219AF004F2757 /* Assets.xcassets */,
 				9956A560262219AF004F2757 /* LaunchScreen.storyboard */,
 				9956A563262219AF004F2757 /* Info.plist */,
 				9956A55B262219AC004F2757 /* SettingView_sample.xcdatamodeld */,
+				9940FFA6265662D8006D045E /* Constants.swift */,
 			);
 			path = "SettingView-sample";
 			sourceTree = "<group>";
@@ -89,10 +103,22 @@
 			children = (
 				9956A556262219AC004F2757 /* ViewController.swift */,
 				9956A56F26223658004F2757 /* SwitchViewController.swift */,
-				9956A56B262220D5004F2757 /* SettingTableViewCell.swift */,
-				9956A57526230D39004F2757 /* SwitchTableViewCell.swift */,
+				9956A678262BFBFA004F2757 /* ColorVersionViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		99D38CF42654253900956CA3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9956A56B262220D5004F2757 /* SettingTableViewCell.swift */,
+				9956A57526230D39004F2757 /* SwitchTableViewCell.swift */,
+				9956A675262B3926004F2757 /* VersionTableViewCell.swift */,
+				9940FF9D265635ED006D045E /* IconVersionTableViewCell.swift */,
+				9956A672262B0778004F2757 /* ColorTableViewCell.swift */,
+				99D38CF12654251600956CA3 /* IconColorTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,12 +191,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9956A679262BFBFA004F2757 /* ColorVersionViewController.swift in Sources */,
 				9956A57026223658004F2757 /* SwitchViewController.swift in Sources */,
 				9956A557262219AC004F2757 /* ViewController.swift in Sources */,
 				9956A57626230D39004F2757 /* SwitchTableViewCell.swift in Sources */,
 				9956A56C262220D5004F2757 /* SettingTableViewCell.swift in Sources */,
 				9956A55D262219AC004F2757 /* SettingView_sample.xcdatamodeld in Sources */,
+				99D38CF22654251600956CA3 /* IconColorTableViewCell.swift in Sources */,
+				9940FFA7265662D8006D045E /* Constants.swift in Sources */,
+				9940FF9E265635ED006D045E /* IconVersionTableViewCell.swift in Sources */,
+				9956A673262B0779004F2757 /* ColorTableViewCell.swift in Sources */,
 				9956A553262219AC004F2757 /* AppDelegate.swift in Sources */,
+				9956A676262B3926004F2757 /* VersionTableViewCell.swift in Sources */,
 				9956A555262219AC004F2757 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

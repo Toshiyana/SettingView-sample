@@ -7,15 +7,13 @@
 
 import UIKit
 
-class SwitchTableViewCell: UITableViewCell {
-
-    static let identifier = "SwitchTableViewCell"
+class SettingTableViewCell: UITableViewCell {
     
     private let iconContainer: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
-        
+        //view.layer.cornerRadius = 20
         view.layer.masksToBounds = true
         return view
     }()
@@ -33,20 +31,13 @@ class SwitchTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let mySwitch: UISwitch = {
-        let mySwitch = UISwitch()
-        mySwitch.onTintColor = .systemBlue
-        return mySwitch
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(iconContainer)
         iconContainer.addSubview(iconImageView)
         contentView.addSubview(label)
-        contentView.addSubview(mySwitch)
         contentView.clipsToBounds = true
-        //accessoryType = .disclosureIndicator
+        accessoryType = .disclosureIndicator
     }
     
     required init?(coder: NSCoder) {
@@ -56,8 +47,12 @@ class SwitchTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        // 画像iconが左端に配置されている場合、Autolayoutを気にしなくて良い
+        // 画面サイズは右に広がるから
+        
         let size: CGFloat = contentView.frame.size.height - 12
         iconContainer.frame = CGRect(x: 15, y: 6, width: size, height: size)
+        //iconContainer.layer.cornerRadius = iconContainer.frame.size.width / 2//frameを定義した後でないと，円形にできない
         
         let imageSize: CGFloat = size / 1.5
         iconImageView.frame = CGRect(x: (size-imageSize)/2, y: (size-imageSize)/2, width: imageSize, height: imageSize)
@@ -66,27 +61,18 @@ class SwitchTableViewCell: UITableViewCell {
                              y: 0,
                              width: contentView.frame.size.width - 20 - iconContainer.frame.size.width,
                              height: contentView.frame.size.height)
-        
-        mySwitch.sizeToFit()
-        mySwitch.frame = CGRect(x: contentView.frame.size.width - mySwitch.frame.size.width - 20,
-                                y: (contentView.frame.size.height - mySwitch.frame.size.height) / 2,
-                                width: mySwitch.frame.size.width,
-                                height: mySwitch.frame.size.height)
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        iconContainer.backgroundColor = nil
-        iconImageView.image = nil
-        label.text = nil
-        mySwitch.isOn = false
-    }
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        iconContainer.backgroundColor = nil
+//        iconImageView.image = nil
+//        label.text = nil
+//    }
     
-    public func configure(with model: SettingSwitchOption) {
+    public func configure(with model: SettingOption) {
         iconContainer.backgroundColor = model.iconBackgroundColor
         iconImageView.image = model.icon
         label.text = model.title
-        mySwitch.isOn = model.isOn
     }
 }
-
